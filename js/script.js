@@ -9,7 +9,7 @@ class Timer {
         await this.countdown()
         this.circle.classList = "progress"
         var remaining, interval, duration, end;
-        duration = hours * 3600000 + minutes * 60000 + (seconds + 1) * 1000
+        duration = parseInt(hours) * 3600000 + parseInt(minutes) * 60000 + (parseInt(seconds) + 1) * 1000
         end = Date.now() + duration
         interval = setInterval(async () => {
             remaining = end - Date.now()
