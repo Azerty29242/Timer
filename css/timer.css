@@ -1,24 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-color:  #f5eef8;
 }
 
 circle.progress {
-    margin: 0 auto;
     display: block;
     position: absolute;
-    cy: 50vmin;
-    cx: 50vmin;
-    r: 46.5vmin;
+    cy: 47.5vmin;
+    cx: 47.5vmin;
+    r: 45vmin;
     fill: none;
     stroke-dasharray: 2051;
     stroke-dashoffset: 2051;
     stroke: url(#circle.progress.color);
-    stroke-width: 3.5vh;
+    stroke-width: 4vmin;
     stroke-linecap: round;
     transform-origin: center;
     transform: rotate(-90deg);
@@ -28,15 +26,43 @@ circle.progress.animation {
     animation: circle 3s linear forwards;
 }
 
+.progress-container {
+    left: 50vw;
+    top: 50vh;
+    width: 90vmin;
+    height: 90vmin;
+    margin-top: -47.5vmin;
+    margin-left: -47.5vmin;
+    position: absolute;
+    padding: none;
+}
+
+.outer {
+    margin: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    padding: 2.5%;
+}
+
+.inner {
+    margin: 2.5%;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7);
+}
 
 svg {
-    margin: 0 auto;
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vmin;
-    width: 100vmin;
+    left: 50vw;
+    top: 50vh;
+    width: 95vmin;
+    height: 95vmin;
+    margin-top: -47.5vmin;
+    margin-left: -47.5vmin;
 }
 
 svg text {
