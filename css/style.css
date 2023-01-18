@@ -12,6 +12,6 @@ input {
 
 button {
     border: none;
-    border-radius: 5rem;
+    border-radius: .5rem;
     padding: .5rem;
 }
