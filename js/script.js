@@ -1,25 +1,3 @@
-function vh(percent) {
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    return (percent * h) / 100;
-}
-
-function vw(percent) {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    return (percent * w) / 100;
-}
-
-function vmin(percent) {
-        return Math.min(vh(percent), vw(percent));
-}
-
-function vmax(percent) {
-    return Math.max(vh(percent), vw(percent));
-}
-
-
-console.log(parseInt(vmin(45) * Math.PI * 2) + 1, Math.PI)
-
-
 class Timer {
     constructor(circle, text) {
         this.circle = circle
@@ -28,6 +6,8 @@ class Timer {
     }
 
     async start(hours, minutes, seconds) {
+        this.circle.style["stroke-dasharray"] = parseInt(Math.PI * this.circle.getBoundingClientRect().width)
+        this.circle.style["stroke-dashoffset"] = parseInt(Math.PI * this.circle.getBoundingClientRect().width)
         await this.countdown()
         this.circle.classList = "progress"
         var remaining, interval, duration, end;
@@ -35,11 +15,10 @@ class Timer {
         end = Date.now() + duration
         interval = setInterval(async () => {
             remaining = end - Date.now()
-            this.circle.style["stroke-dashoffset"] = (remaining * parseInt(vmin(45) * Math.PI * 2) + 1) / duration;
+            this.circle.style["stroke-dashoffset"] = remaining * parseInt(Math.PI * this.circle.getBoundingClientRect().width) / duration;
             if (remaining < 0) {
                 this.circle.style["stroke-dashoffset"] = 0
                 clearInterval(interval)
-                this.text.innerHTML = "Fin"
                 window.location.href = "https://azerty29242.github.io/Timer"
                 return true
             }  else {

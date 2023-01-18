@@ -17,8 +17,6 @@ circle.progress {
     cx: 47.5vmin;
     r: 45vmin;
     fill: none;
-    stroke-dasharray: calc(45vmin * var(--pi) * 2);
-    stroke-dashoffset: calc(45vmin * var(--pi) * 2);
     stroke: url(#circle.progress.color);
     stroke-width: 4.1vmin;
     stroke-linecap: round;
