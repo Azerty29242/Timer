@@ -11,9 +11,9 @@ circle.progress {
     margin: 0 auto;
     display: block;
     position: absolute;
-    cy: 50vh;
-    cx: 50vh;
-    r: 46.5vh;
+    cy: 50vmin;
+    cx: 50vmin;
+    r: 46.5vmin;
     fill: none;
     stroke-dasharray: 2051;
     stroke-dashoffset: 2051;
@@ -35,12 +35,12 @@ svg {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vh;
+    height: 100vmin;
+    width: 100vmin;
 }
 
 svg text {
-    font-size: 10vh;
+    font-size: 10vmin;
     font-family: 'Roboto', sans-serif;
     
 }
