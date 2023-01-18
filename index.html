@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialize.css">
     <title>Minuteur</title>
 </head>
-<body>
-    <main>
+<body class="lighten-5 grey">
+    <div class="container">
         <h1>Minuteur en ligne</h1>
-        <form action="https://azerty29242.github.io/Timer/timer.html">
-            <input type="number" min="0" max="23" name="hours" placeholder="Heures" required>
-            <input type="number" min="0" max="59" name="minutes" placeholder="Minutes" required>
-            <input type="number" min="0" max="59" name="seconds" placeholder="Secondes" required>
-            <button type="submit">Lancer le minuteur</button>
+        <form action="./timer.html">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input type="number" min="0" max="23" name="hours" placeholder="Heures" required>
+                </div>
+                <div class="input-field col s4">
+                    <input type="number" min="0" max="59" name="minutes" placeholder="Minutes" required>
+                </div>
+                <div class="input-field col s4">
+                    <input type="number" min="0" max="59" name="seconds" placeholder="Secondes" required>
+                </div>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light">Lancer le minuteur</button>
         </form>
     </main>
 </body>

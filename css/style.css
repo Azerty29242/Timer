@@ -1,18 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
+:root {
+    --pi: 3.141592653589793
+}
+
+circle.progress {
+    display: block;
+    position: absolute;
+    fill: none;
+    stroke: url(#circle.progress.color);
+    stroke-width: 4vmin;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+circle.progress.animation {
+    animation: circle 3s linear forwards;
+}
+
+.progress-container {
+    left: 50vw;
+    top: 50vh;
+    width: 90vmin;
+    height: 90vmin;
+    margin-top: -45vmin;
+    margin-left: -45vmin;
+    position: absolute;
+    padding: none;
+}
+
+.outer {
+    margin: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    padding: 2.5%;
+}
+
+.inner {
+    margin: 2.5%;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7);
+}
+
+svg {
+    display: block;
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    width: 95vmin;
+    height: 95vmin;
+    margin-top: -47.5vmin;
+    margin-left: -47.5vmin;
+}
+
+svg text {
+    font-size: 10vmin;
     font-family: 'Roboto', sans-serif;
-    background-color:  #f5eef8;
-    margin-inline: 5rem;
+    
 }
 
-input {
-    width: 10rem;
-    padding: .5rem;
-}
-
-button {
-    border: none;
-    border-radius: .5rem;
-    padding: .5rem;
+@keyframes circle {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: calc(45vmin * var(--pi) * 2);
+    }
 }

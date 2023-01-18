@@ -19,7 +19,7 @@ class Timer {
             if (remaining < 0) {
                 this.circle.style["stroke-dashoffset"] = 0
                 clearInterval(interval)
-                window.location.href = "https://azerty29242.github.io/Timer"
+                window.location.href = "./"
                 return true
             }  else {
                 this.text.innerHTML = `${("0" + parseInt(remaining / 3600000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 / 60000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 % 60000 / 1000)).slice(-2)}`
@@ -28,7 +28,7 @@ class Timer {
     }
 
     countdown() {
-        var duration, interval;
+        var duration;
         duration = 2
         this.text.innerHTML = 3
         return new Promise(resolve => { 
