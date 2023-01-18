@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --pi: 3.141592653589793
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -13,10 +17,10 @@ circle.progress {
     cx: 47.5vmin;
     r: 45vmin;
     fill: none;
-    stroke-dasharray: 2051;
-    stroke-dashoffset: 2051;
+    stroke-dasharray: calc(45vmin * var(--pi) * 2);
+    stroke-dashoffset: calc(45vmin * var(--pi) * 2);
     stroke: url(#circle.progress.color);
-    stroke-width: 4vmin;
+    stroke-width: 4.1vmin;
     stroke-linecap: round;
     transform-origin: center;
     transform: rotate(-90deg);
@@ -76,6 +80,6 @@ svg text {
         stroke-dashoffset: 0;
     }
     100% {
-        stroke-dashoffset: 2051;
+        stroke-dashoffset: calc(45vmin * var(--pi) * 2);
     }
 }
