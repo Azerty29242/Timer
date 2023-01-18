@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Minuteur</title>
 </head>
-<body>
+<body class="grey lighten-5">
     <div class="progress-container">
-        <div class="outer">
+        <div class="outer center-align">
             <div class="inner"></div>
         </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="center" version="1.1">
         <defs>
             <linearGradient id="circle.progress.color">
             <stop offset="0%" stop-color="BlueViolet" />
             <stop offset="100%" stop-color="MediumVioletRed" />
             </linearGradient>
         </defs>
-        <circle id="progress" class="progress animation" cy="47.5vmin" cx="47.5vmin" r="45vmin" />
+        <circle id="progress" class="progress animation" cy="45.25vmin" cx="45.25vmin" r="42.75vmin" />
         <text id="text" text-anchor="middle" x="50%" y="50%">Temps restant</text>
     </svg>
     <script src="js/script.js"></script>
