@@ -13,9 +13,6 @@ body {
 circle.progress {
     display: block;
     position: absolute;
-    cy: 47.5vmin;
-    cx: 47.5vmin;
-    r: 45vmin;
     fill: none;
     stroke: url(#circle.progress.color);
     stroke-width: 4.1vmin;
