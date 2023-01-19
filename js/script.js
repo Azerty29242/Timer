@@ -1,7 +1,8 @@
 class Timer {
-    constructor(circle, text) {
+    constructor(circle, text, audio) {
         this.circle = circle
         this.text = text
+        this.audio = audio
     }
 
     async start(hours, minutes, seconds) {
@@ -15,11 +16,14 @@ class Timer {
     }
 
     loop(end, circle, text, duration, circumference) {
+        this.circle.style["stroke-dasharray"] = this.circumference()
+        document.body.style.setProperty('--stroke-dasharray', this.circumference())
         var remaining = end - Date.now();
         circle.style["stroke-dashoffset"] = remaining * circumference() / duration;
         if (remaining < 0) {
             circle.style["stroke-dashoffset"] = 0;
-            window.location.href = "./"
+            this.text.innerHTML = "Fin"
+            this.audio.play()
             return true;
         } else {
             text.innerHTML = `${("0" + parseInt(remaining / 3600000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 / 60000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 % 60000 / 1000)).slice(-2)}`;
@@ -49,7 +53,31 @@ class Timer {
     }
 }
 
-const timer = new Timer(document.getElementById("progress"), document.getElementById("text"))
-const params = new URLSearchParams(window.location.search)
-console.log(timer.circumference())
-timer.start(params.get("hours"), params.get("minutes"), params.get("seconds"))
+
+class Sounds {
+    constructor() {
+        this.list = []
+    }
+
+    load(callback) {
+        fetch("./data/sounds.json")
+            .then(response => response.json())
+            .then(sounds => {
+                sounds.forEach(sound => {
+                    this.list.push(new Sound(sound.name, sound.src))
+                });
+                callback()
+            })
+    }
+}
+
+class Sound {
+    constructor(name, src) {
+        this.name = name
+        this.src = src
+    }
+
+    play() {
+        new Audio(this.src).play()
+    }
+}
