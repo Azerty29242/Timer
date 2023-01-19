@@ -25,9 +25,22 @@
                     <label for="seconds">Seconds</label>
                 </div>
             </div>
+            <div class="row">
+                <div class="input-field">
+                    <select id="sound"></select>
+                </div>
+            </div>
             <button type="submit" class="btn waves-effect waves-light">Lancer le minuteur</button>
         </form>
-    </main>
+    </div>
     <script src="js/materialize.js"></script>
+    <script src="js/sounds.js"></script>
+    <script>
+        load((sounds) => {
+            sounds.forEach(sound => {
+                
+            });
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Game Start",
+        "src": "audio/game-start.mp3"
+    },
+    {
+        "name": "Beep",
+        "src": "audio/beep.mp3"
+    }
+]
