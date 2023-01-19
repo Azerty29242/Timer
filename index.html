@@ -13,17 +13,21 @@
         <form action="./timer.html">
             <div class="row">
                 <div class="input-field col s4">
-                    <input type="number" min="0" max="23" name="hours" placeholder="Heures" required>
+                    <input type="number" min="0" max="23" class="validate" name="hours"  id="hours" required>
+                    <label for="hours">Heures</label>
                 </div>
                 <div class="input-field col s4">
-                    <input type="number" min="0" max="59" name="minutes" placeholder="Minutes" required>
+                    <input type="number" min="0" max="59" class="validate" name="minutes" id="minutes" required>
+                    <label for="minutes">Minutes</label>
                 </div>
                 <div class="input-field col s4">
-                    <input type="number" min="0" max="59" name="seconds" placeholder="Secondes" required>
+                    <input type="number" min="0" max="59" class="validate" name="seconds" id="seconds" required>
+                    <label for="seconds">Seconds</label>
                 </div>
             </div>
             <button type="submit" class="btn waves-effect waves-light">Lancer le minuteur</button>
         </form>
     </main>
+    <script src="js/materialize.js"></script>
 </body>
 </html>
