@@ -1,5 +1,5 @@
 function load(callback) {
-    fecth("data/sounds.json")
+    fetch("data/sounds.json")
         .then(response => response.json())
         .then(sounds => callback(sounds))
 }
