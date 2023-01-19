@@ -7,6 +7,7 @@ class Timer {
     async start(hours, minutes, seconds) {
         this.circle.style["stroke-dasharray"] = this.circumference()
         this.circle.style["stroke-dashoffset"] = this.circumference()
+        document.body.style.setProperty('--stroke-dasharray', this.circumference())
         await this.countdown()
         var duration = parseInt(hours) * 3600000 + parseInt(minutes) * 60000 + (parseInt(seconds) + 1) * 1000
         var end = Date.now() + duration

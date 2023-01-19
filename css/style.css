@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --pi: 3.141592653589793
+    --stroke-dasharray: 0
 }
 
 circle.progress {
@@ -69,6 +69,6 @@ svg text {
         stroke-dashoffset: 0;
     }
     100% {
-        stroke-dashoffset: calc(45.5vmin * var(--pi) * 2);
+        stroke-dashoffset: var(--stroke-dasharray);
     }
 }
