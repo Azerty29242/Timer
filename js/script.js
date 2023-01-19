@@ -15,7 +15,7 @@ class Timer {
         this.loop(end, this.circle, this.text, duration, this.circumference)
     }
 
-    loop(end, circle, text, duration, circumference) {
+    async loop(end, circle, text, duration, circumference) {
         this.circle.style["stroke-dasharray"] = this.circumference()
         document.body.style.setProperty('--stroke-dasharray', this.circumference())
         var remaining = end - Date.now();
@@ -24,6 +24,7 @@ class Timer {
             circle.style["stroke-dashoffset"] = 0;
             this.text.innerHTML = "Fin"
             this.audio.play()
+            this.audio.addEventListener("ended", () => document.location.href = "./")
             return true;
         } else {
             text.innerHTML = `${("0" + parseInt(remaining / 3600000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 / 60000)).slice(-2)}:${("0" + parseInt(remaining % 3600000 % 60000 / 1000)).slice(-2)}`;

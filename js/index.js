@@ -12,6 +12,5 @@ sounds.load(() => {
 })
 
 document.getElementById("sound").addEventListener("change", () => {
-    console.log(document.getElementById("sound"), document.getElementById("sound").selectedIndex - 1, sounds.list)
     sounds.list[document.getElementById("sound").selectedIndex - 1].play()
 })
