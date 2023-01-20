@@ -58,6 +58,7 @@ class Timer {
 class Sounds {
     constructor() {
         this.list = []
+        this.volume = 10
     }
 
     load(callback) {
@@ -79,6 +80,9 @@ class Sound {
     }
 
     play() {
-        new Audio(this.src).play()
+        this.volume = document.getElementById("volume").value
+        var audio = new Audio(this.src)
+        audio.volume = this.volume / 10
+        audio.play()
     }
 }

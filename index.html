@@ -26,10 +26,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field">
+                <div class="input-field col s6">
                     <select id="sound" class="browser-default" name="sound" required>
                         <option value="" selected disabled>Choisissez une sonnerie</option>
                     </select>
+                </div>
+                <div class="range-field col s6">
+                    <input name="volume" id="volume" type="range" min="0" max="10" value="10" />
                 </div>
             </div>
             <button type="submit" class="btn waves-effect waves-light">Lancer le minuteur</button>
