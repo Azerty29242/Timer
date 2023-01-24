@@ -1,5 +1,4 @@
 var sounds = new Sounds()
-var images = new Images()
 
 sounds.load(() => {
     var option;
