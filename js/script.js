@@ -86,3 +86,23 @@ class Sound {
         audio.play()
     }
 }
+
+class Images {
+    constructor() {
+        this.list = []
+    }
+
+    load(callback) {
+        fetch("./data/images.json")
+            .then(response => response.json())
+            .then(sounds => {
+                images.forEach(image => {
+                    this.list.push({
+                        name: image.name, 
+                        src: image.src
+                    })
+                });
+                callback()
+            })
+    }
+}
