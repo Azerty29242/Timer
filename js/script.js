@@ -95,7 +95,7 @@ class Images {
     load(callback) {
         fetch("./data/images.json")
             .then(response => response.json())
-            .then(sounds => {
+            .then(images => {
                 images.forEach(image => {
                     this.list.push({
                         name: image.name, 
