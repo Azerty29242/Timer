@@ -11,17 +11,6 @@ sounds.load(() => {
     })
 })
 
-images.load(() => {
-    var option;
-    images.list.forEach(image => {
-        option = document.createElement("option")
-        option.value = image.src
-        option.innerHTML = image.name
-        option["data-icon"]= image.src
-        document.getElementById("image").appendChild(option)
-    })
-})
-
 document.getElementById("sound").addEventListener("change", () => {
     sounds.list[document.getElementById("sound").selectedIndex - 1].play()
 })
