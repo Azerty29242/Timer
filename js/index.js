@@ -17,7 +17,7 @@ images.load(() => {
         option = document.createElement("option")
         option.value = image.src
         option.innerHTML = image.name
-        option["data-icon"]= image.src
+        option.dataset.icon = image.src
         document.getElementById("image").appendChild(option)
     })
 })

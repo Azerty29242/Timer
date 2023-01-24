@@ -4,6 +4,11 @@
     --stroke-dasharray: 0
 }
 
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 circle.progress {
     display: block;
     position: absolute;
