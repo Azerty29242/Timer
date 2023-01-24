@@ -18,6 +18,7 @@ images.load(() => {
         option.value = image.src
         option.innerHTML = image.name
         option.dataIcon = image.src
+        console.log(image)
         document.getElementById("image").appendChild(option)
     })
 })
